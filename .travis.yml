@@ -1,0 +1,12 @@
+language: java
+jdk:
+- oraclejdk8
+sudo: false
+script: mvn clean test
+deploy:
+  provider: heroku
+  api_key:
+    secure: QPU5y0l4FjIKtaGaVFtmM1ReVHchzJ8ZnEZgpXhy7gEmYgabXDRzh1z420oX7zQW5PyoRWkn3jishJYNP2BE76vTXWp/l/caOzp4+PQT8T/vcFAq2aQJ+8MBV9kXD94CY7sbOt4+wapghSmlnBf8U13WgnoPcuIAlHG3VNM+F0w7QG0mF1h//QIeLQ5PaPrHaGZDOSbopd3cbfH0wcr82iiBT0gVQWTBhVHgcMio62g72WMMEuJbGeAbiBfLec4aisf8yqiX2Bbj6zOuFt/qAULN/UQMVqcQP5qT2JOjP+NGs9qOHsLQ9lYhBPVdrnGRiHy0Yp3laiREoTlBZNUQ02t5b0dPNMpfLpALw44T4q6eMH0XMtH+fatVygPyTtiBnLi4JbhDmUifcX4poGJw9F3fFtunsF38jToG42OC5ON6ttAIiO6rxLfnGHLf5lePMMpnCMaZFpebZar4HdRtodxEqYZrkUS6549jrmTOlPO4WG0HBTsXNxSJk0OwF7cGjNIlsyFiP54FMlCVPcX3cJ8kg/Bao64Fiz9oSJRyDuliZecByPhe8r8Gr6JuSwhHTiEY+cE8Lc49+ByWSSll93HTriwWFdItaAIUpCSdPx1rf8X3p5HBDVHOPeQorFm655vnWStStTxGs5PRnmOnXzPmohP2u8PPkRf7neGHHUM=
+  app: gerona-customer-info-api
+  on:
+    repo: scias23/gerona-customerinfo-api

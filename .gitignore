@@ -1,0 +1,33 @@
+target/
+bin/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Eclipse artifacts, including WTP generated manifests
+.classpath
+.project
+spring-*/src/main/java/META-INF/MANIFEST.MF
+.settings
+.springBeans
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+.idea
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
+logs/
+src/assembly
+src/main/scripts
+newrelic/newrelic.yml
+newrelic/extensions/efs-default-instrumentation.xml
+app.pid
+.factorypath
+.apt_generated/
+work/
