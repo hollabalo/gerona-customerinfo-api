@@ -6,9 +6,9 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.recruitit.customer.types.Address;
 import com.recruitit.customer.types.CustomerInfoCreateAndUpdateResponse;
@@ -19,8 +19,8 @@ import com.recruitit.customer.types.Name;
 import com.recruitit.customerinfo.TestApplicationConfig;
 import com.recruitit.customerinfo.exception.CustomerNotFoundException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = {TestApplicationConfig.class})
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {TestApplicationConfig.class})
 public class CustomerInfoControllerTest {
 
 	@Autowired
