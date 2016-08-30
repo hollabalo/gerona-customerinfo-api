@@ -18,10 +18,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<tomcat.version>8.0.33</tomcat.version>
-		<spring-boot-starter-data-jpa.version>1.4.0.RELEASE</spring-boot-starter-data-jpa.version>
-		<spring-boot-starter-tomcat.version>1.4.0.RELEASE</spring-boot-starter-tomcat.version>
-		<hsqldb.version>2.3.4</hsqldb.version>
+		<tomcat.version>8.5.3</tomcat.version>
 	</properties>
 
 	<dependencies>
@@ -36,17 +33,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>${spring-boot-starter-data-jpa.version}</version>
-	    </dependency>
+			</dependency>
 	    <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <version>${spring-boot-starter-tomcat.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<!-- Testing dependencies -->
 		<dependency>
@@ -57,8 +53,7 @@
 		<dependency>
 		    <groupId>org.hsqldb</groupId>
 		    <artifactId>hsqldb</artifactId>
-		    <version>${hsqldb.version}</version>
-		</dependency>
+		    </dependency>
 	</dependencies>
 
 	<build>
@@ -77,7 +72,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>

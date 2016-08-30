@@ -11,10 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -38,7 +41,7 @@ public class CustomerInfoController {
 	@Autowired
 	private CustomerInfoService service;
 	
-	@RequestMapping(method = RequestMethod.GET, value="/{id}")
+	@GetMapping("/{id}")
 	public HttpEntity<CustomerInfoResponse> find(
 			@PathVariable String id) throws CustomerNotFoundException {
 		String referenceId = UUID.randomUUID().toString();
@@ -57,7 +60,7 @@ public class CustomerInfoController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping
 	public HttpEntity<CustomerInfoCreateAndUpdateResponse> create(
 			@Valid @RequestBody CustomerInfoCreateRequest request) {
 		String referenceId = UUID.randomUUID().toString();
@@ -76,7 +79,7 @@ public class CustomerInfoController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value="/{id}")
+	@PutMapping("/{id}")
 	public HttpEntity<CustomerInfoCreateAndUpdateResponse> update(
 			@PathVariable String id,
 			@Valid @RequestBody CustomerInfoUpdateRequest request) 
@@ -97,7 +100,7 @@ public class CustomerInfoController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value="/{id}")
+	@DeleteMapping("/{id}")
 	public HttpEntity<CustomerInfoDeleteResponse> delete(
 			@PathVariable String id) throws CustomerNotFoundException {
 		String referenceId = UUID.randomUUID().toString();
